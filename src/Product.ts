@@ -1,7 +1,7 @@
 export default class Product
 {
     id: number;
-    category: number;
+    idCategory: number;
     name: string;
 
     price: number;  //cents
@@ -13,10 +13,10 @@ export default class Product
 
 
 
-    constructor (id: number, category: number, name: string, price: number, width: number, height: number, length: number, weight: number)
+    constructor (id: number, idCategory: number, name: string, price: number, width: number, height: number, length: number, weight: number)
     {
         this.id = id;
-        this.category = category;
+        this.idCategory = idCategory;
         this.name = name;
         this.price = price;
         this.width = width;
