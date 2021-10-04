@@ -13,7 +13,7 @@ export default class Product
 
 
 
-    constructor (id: number, idCategory: number, name: string, price: number, width: number, height: number, length: number, weight: number)
+    constructor (id: number, idCategory: number, name: string, price: number, width: number=0, height: number=0, length: number=0, weight: number=0)
     {
         this.id = id;
         this.idCategory = idCategory;
