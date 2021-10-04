@@ -1,4 +1,5 @@
-export default class Cpf {
+export default class Cpf
+{
     CPF_VALID_LENGTH = 11;
     FACTOR_FIRST_VERIFIER_DIGIT = 10;
     FACTOR_SECOND_VERIFIER_DIGIT = 11;
