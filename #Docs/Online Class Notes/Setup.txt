@@ -1,0 +1,15 @@
+npm init
+npm install jest --save
+
+
+
+# package.json #
+script{
+	jest --coverage
+}
+
+
+
+JS
+TypeScript
+Jest
