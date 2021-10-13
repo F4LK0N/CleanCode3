@@ -1,5 +1,8 @@
-Instalação do Node.js
+# Ambiente de Desenvolvimento
 
+
+
+## Instalação do Node.js
 
 Vamos começar inicializando o nosso projeto no Node.js com o comando npm init.
 
@@ -7,43 +10,49 @@ Caso você não tenha o Node.js instalado, basta entrar em https://nodejs.org, b
 
 Eu sempre recomendo que você utilize a última versão estável. Fique atento caso esteja utilizando uma versão muito antiga.
 
-Inicialização do Projeto
 
+
+## Inicialização do Projeto
 
 Após inicializar o projeto, o arquivo package.json será criado. Lá vão ficar as dependências e também os scripts de execução tanto do TypeScript quanto dos testes.
 
-Instalação e Inicialização do TypeScript
 
+
+## Instalação e Inicialização do TypeScript
 
 Instale o TypeScript utilizando o comando abaixo:
 
-npm install typescript --save
+`npm install typescript --save`
 
 Depois disso, inclua no package.json esta linha em "scripts":
 
-"tsc:init": "tsc --init"
+`"tsc:init": "tsc --init"`
 
 Agora rode no terminal o seguinte comando:
 
-npm run tsc:init
+`npm run tsc:init`
 
 Com isso, o arquivo tsconfig.js deve ter sido criado e estamos prontos para começar.
 
-Instalação do Jest
 
+
+## Instalação do Jest
 
 Instale o Jest utilizando o comando abaixo:
 
-npm install jest --save-dev
-npm install @types/jest --save-dev
+`npm install jest --save-dev`
 
-Configuração do TypeScript
+`npm install @types/jest --save-dev`
 
+
+
+## Configuração do TypeScript
 
 O TypeScript tem um compilador que faz a conversão do código para JavaScript. Por conta disso, precisamos definir alguns poucos parâmetros:
 
-tsconfig.json
+**tsconfig.json**
 
+```
 {
     "compilerOptions": {
     "incremental": true,
@@ -60,36 +69,40 @@ tsconfig.json
         "./node_modules"
     ]
 }
-
-
+```
 
 Fique totalmente à vontade para configurar de forma diferente.
 
-Criação dos scripts
 
+
+## Criação dos scripts
 
 Vamos criar mais alguns scripts para rodar o TypeScript e também o Jest:
 
-"build": "tsc"
-"test": "tsc && jest dist/"
+`"build": "tsc"`
 
-Testando se tudo deu certo
+`"test": "tsc && jest dist/"`
 
+
+
+## Testando se tudo deu certo
 
 Pronto, agora crie uma pasta chamada src e dentro dela crie dois arquivos:
 
-Circle.test.ts
+**Circle.test.ts**
 
+```
 import Circle from "./Circle";
 
 test("Should calculate the area of circle", function () {
     const circle = new Circle(2);
     expect(circle.getArea()).toBe(12.566370614359172);
 });
+```
 
+**Circle.ts**
 
-Circle.ts
-
+```
 export default class Circle {
     radius: number;
 
@@ -101,10 +114,10 @@ export default class Circle {
         return 2 * Math.PI * this.radius;
     }
 }
-
+```
 
 Agora basta executar:
 
-npm run test
+`npm run test`
 
 Se os testes tiverem sido executados com sucesso está tudo pronto! 
