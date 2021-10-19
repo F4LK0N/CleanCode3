@@ -10,9 +10,11 @@ test("Body - Sanitize Inputs", function () {
 test("Body - Default", function () {
     const body = new Body();
     expect(body.volume).toBe(1);
+    expect(body.density).toBe(1);
 });
 
 test("Body - Calculate Volume", function () {
-    const body = new Body(10, 15, 12);
+    const body = new Body(10, 15, 12, 500);
     expect(body.volume).toBe(1800);
+    expect(body.density).toBe(0.28);
 });
