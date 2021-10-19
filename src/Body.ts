@@ -1,11 +1,11 @@
 export default class Body
 {
-    width: number;
-    height: number;
-    length: number;
-    volume: number;
+    width: number;  //cm
+    height: number; //cm
+    length: number; //cm
+    volume: number; //cm3
 
-    constructor (width: number, height: number, length: number) {
+    constructor (width: number = 1, height: number = 1, length: number = 1) {
         this.width  = Math.max(1, width);
         this.height = Math.max(1, height);
         this.length = Math.max(1, length);

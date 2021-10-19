@@ -7,6 +7,11 @@ test("Body - Clamp Inputs", function () {
     expect(body.length).toBe(1);
 });
 
+test("Body - Default", function () {
+    const body = new Body();
+    expect(body.volume).toBe(1);
+});
+
 test("Body - Calculate Volume", function () {
     const body = new Body(10, 15, 12);
     expect(body.volume).toBe(1800);
