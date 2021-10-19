@@ -15,7 +15,7 @@ export default class Product
         this.id = id;
         this.idCategory = idCategory;
         this.name = name;
-        this.price = price;
+        this.price = Math.max(1, price);
         this.body = body;
     }
 
