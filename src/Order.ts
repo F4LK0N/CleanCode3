@@ -3,10 +3,15 @@ import Cpf from "./Cpf";
 import Product from "./Product";
 import OrderItem from "./OrderItem";
 
-export default class Order {
+export default class Order
+{
     cpf: Cpf;
     coupon: Coupon | undefined;
     orderItems: OrderItem[];
+
+    freightDistance:number = 1000;
+    FREIGHT_MINIMUN = 1000;
+
 
 
     constructor (cpf: string) {
@@ -14,22 +19,33 @@ export default class Order {
         this.orderItems = [];
     }
 
-    addItem(item: Product, quantity: number) {
-        this.orderItems.push(new OrderItem(item.id, item.price, quantity));
+    addItem(quantity: number, product: Product) {
+        const orderItem = new OrderItem(this.orderItems.length+1, 1, product);
+        this.orderItems.push(orderItem);
     }
 
     addCoupon (coupon: Coupon) {
         this.coupon = coupon;
     }
 
-    getTotal() {
-        let total = 0;
+    getPrice() {
+        let price = 0;
         for (const orderItem of this.orderItems) {
-            total += orderItem.getTotal();
+            price += orderItem.price;
         }
-        if (this.coupon) {
-            total -= (total * this.coupon.percentage) / 100;
-        }
-        return total;
+        return price;
     }
+
+    getFreight() {
+        let freight = 0;
+        for (const orderItem of this.orderItems) {
+            freight += (this.freightDistance * orderItem.volume * (orderItem.density / 100));
+        }
+        return freight;
+    }
+
+    getTotal() {
+        return this.getPrice() + this.getFreight();
+    }
+
 }
