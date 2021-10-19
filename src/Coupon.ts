@@ -6,7 +6,7 @@ export default class Coupon
 
     constructor (code: string, percentage: number, expires: Date = null) {
         this.code = code;
-        this.percentage = percentage;
+        this.percentage = Math.max(1, Math.min(100, percentage));
         this.expireDate = expires;
     }
 
