@@ -12,4 +12,5 @@ test("OrderItem - Create", function () {
     const orderItem = new OrderItem(1, 2, product);
     expect(orderItem.price).toBe(3000);
     expect(orderItem.volume).toBe(2);
+    expect(orderItem.density).toBe(2);
 });

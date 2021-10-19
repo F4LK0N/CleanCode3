@@ -7,6 +7,7 @@ export default class OrderItem
     product: Product;
     price: number; //cents
     volume: number;
+    density: number;
 
 
 
@@ -17,6 +18,7 @@ export default class OrderItem
 
         this.calculatePrice();
         this.calculateVolume();
+        this.calculateDensity();
     }
 
     calculatePrice(){
@@ -25,6 +27,10 @@ export default class OrderItem
 
     calculateVolume(){
         this.volume = this.product.body.volume * this.quantity;
+    }
+
+    calculateDensity(){
+        this.density = this.product.body.density * this.quantity;
     }
 
 }
