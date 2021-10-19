@@ -1,19 +1,15 @@
 import OrderItem from "../src/OrderItem";
-import Body from "../src/Body";
+import Product from "../src/Product";
 
 test("OrderItem - Sanitize Inputs", function () {
-    const orderItem = new OrderItem(1, -1, -1);
+    const product = new Product(1, 1, "Name", 1000);
+    const orderItem = new OrderItem(1, -1, product);
     expect(orderItem.quantity).toBe(1);
-    expect(orderItem.price).toBe(1);
 });
 
 test("OrderItem - Create", function () {
-    const orderItem = new OrderItem(1, 1000, 2);
-    expect(orderItem.getTotal()).toBe(2000);
-});
-
-test("OrderItem - Create with Body", function () {
-    const orderItem = new OrderItem(1, 1000, 3, new Body(10, 11, 20));
-    expect(orderItem.getTotal()).toBe(3000);
-    expect(orderItem.getVolume()).toBe(6600);
+    const product = new Product(1, 1, "Name", 1500);
+    const orderItem = new OrderItem(1, 2, product);
+    expect(orderItem.price).toBe(3000);
+    expect(orderItem.volume).toBe(2);
 });

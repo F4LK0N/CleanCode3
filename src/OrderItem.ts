@@ -1,25 +1,32 @@
 import Body from "./Body";
+import Product from "./Product";
 
 export default class OrderItem
 {
     id: number;
     quantity: number;
+    product: Product;
+
     price: number;   //cents
-    body: Body;
+    volume: number;
 
-    constructor (id: number, price: number, quantity: number, body: Body = new Body()) {
+
+
+    constructor (id: number, quantity: number, product: Product) {
         this.id = id;
-        this.price = Math.max(1, price);
         this.quantity = Math.max(1, quantity);
-        this.body = body;
+        this.product = product;
+
+        this.calculatePrice();
+        this.calculateVolume();
     }
 
-    getTotal () {
-        return this.price * this.quantity;
+    calculatePrice(){
+        this.price = this.product.price * this.quantity;
     }
 
-    getVolume(){
-        return this.body.volume * this.quantity;
+    calculateVolume(){
+        this.volume = this.product.body.volume * this.quantity;
     }
 
 }
