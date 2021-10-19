@@ -5,6 +5,8 @@ export default class Body
     length: number; //cm
     volume: number; //cm3
 
+
+
     constructor (width: number = 1, height: number = 1, length: number = 1) {
         this.width  = Math.max(1, width);
         this.height = Math.max(1, height);

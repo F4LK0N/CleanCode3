@@ -1,4 +1,3 @@
-import Body from "./Body";
 import Product from "./Product";
 
 export default class OrderItem
@@ -6,8 +5,7 @@ export default class OrderItem
     id: number;
     quantity: number;
     product: Product;
-
-    price: number;   //cents
+    price: number; //cents
     volume: number;
 
 
