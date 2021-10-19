@@ -1,4 +1,4 @@
-import Coupon from "../src/Coupon";
+import Coupon from "../../src/domain/Coupon";
 
 test("Coupon - Sanitize Inputs", function () {
     let coupon;

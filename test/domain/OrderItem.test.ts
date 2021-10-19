@@ -1,5 +1,5 @@
-import OrderItem from "../src/OrderItem";
-import Product from "../src/Product";
+import OrderItem from "../../src/domain/OrderItem";
+import Product from "../../src/domain/Product";
 
 test("OrderItem - Sanitize Inputs", function () {
     const product = new Product(1, 1, "Name", 1000);

@@ -1,4 +1,4 @@
-import Body from "../src/Body"
+import Body from "../../src/domain/Body"
 
 test("Body - Sanitize Inputs", function () {
     const body = new Body(-1, -1, -1);

@@ -1,5 +1,5 @@
-import Product from "../src/Product";
-import Body from "../src/Body";
+import Product from "../../src/domain/Product";
+import Body from "../../src/domain/Body";
 
 test("Product - Sanitize Inputs", function () {
     const product = new Product(1, 1, "Name", -1);

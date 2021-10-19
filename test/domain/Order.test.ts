@@ -1,8 +1,8 @@
-import Coupon from "../src/Coupon";
-import Product from "../src/Product";
-import Order from "../src/Order";
-import Body from "../src/Body";
-import Cpf from "../src/Cpf";
+import Coupon from "../../src/domain/Coupon";
+import Product from "../../src/domain/Product";
+import Order from "../../src/domain/Order";
+import Body from "../../src/domain/Body";
+import Cpf from "../../src/domain/Cpf";
 
 test("Order - Invalid CPF", function () {
     expect(() => new Order("111.111.111-11")).toThrow(new Error("Invalid cpf"));
