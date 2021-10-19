@@ -1,7 +1,7 @@
 import OrderItem from "../src/OrderItem";
 import Body from "../src/Body";
 
-test("OrderItem - Clamp Inputs", function () {
+test("OrderItem - Sanitize Inputs", function () {
     const orderItem = new OrderItem(1, -1, -1);
     expect(orderItem.quantity).toBe(1);
     expect(orderItem.price).toBe(1);

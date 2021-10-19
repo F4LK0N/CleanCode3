@@ -1,6 +1,6 @@
 import Body from "../src/Body"
 
-test("Body - Clamp Inputs", function () {
+test("Body - Sanitize Inputs", function () {
     const body = new Body(-1, -1, -1);
     expect(body.width).toBe(1);
     expect(body.height).toBe(1);

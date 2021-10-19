@@ -1,6 +1,6 @@
 import Coupon from "../src/Coupon";
 
-test("Coupon - Clamp Inputs", function () {
+test("Coupon - Sanitize Inputs", function () {
     let coupon;
 
     coupon = new Coupon("A", -1);
