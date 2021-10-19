@@ -10,7 +10,7 @@ export default class Order
     orderItems: OrderItem[];
 
     freightDistance:number = 1000;
-    FREIGHT_MINIMUN = 1000;
+    FREIGHT_MINIMUM = 1000;
 
 
 
@@ -41,7 +41,7 @@ export default class Order
         for (const orderItem of this.orderItems) {
             freight += (this.freightDistance * orderItem.volume * (orderItem.density / 100));
         }
-        return freight;
+        return Math.max(this.FREIGHT_MINIMUM, freight);
     }
 
     getTotal() {

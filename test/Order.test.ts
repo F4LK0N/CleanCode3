@@ -12,6 +12,22 @@ test("Order - Create", function () {
     expect(order).toBeDefined();
 });
 
+test("Order - Freight Minimum", function () {
+    const body = new Body(1, 1, 1, 1);
+    const product1 = new Product(1, 1, "Product", 1000, body);
+    const order = new Order("847.903.332-05");
+    order.addItem(1, product1);
+    expect(order.getFreight()).toBe(1000);
+});
+
+test("Order - Freight", function () {
+    const body = new Body(20, 20, 20, 1000);
+    const product1 = new Product(1, 1, "Product", 1000, body);
+    const order = new Order("847.903.332-05");
+    order.addItem(1, product1);
+    expect(order.getFreight()).toBe(10400);
+});
+
 test("Order - 1 Item Default", function () {
     const body = new Body(10, 10, 10, 1000);
     const product1 = new Product(1, 1, "Product", 1000, body);
@@ -22,6 +38,8 @@ test("Order - 1 Item Default", function () {
     expect(order.getFreight()).toBe(10000);
     expect(order.getTotal()).toBe(11000);
 });
+
+
 
 test("Order - 3 Items", function () {
     const product1 = new Product(1050, 1, "Guitarra", 250000);
