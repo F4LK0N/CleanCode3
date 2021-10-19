@@ -20,11 +20,14 @@ export default class Order
     }
 
     addItem(quantity: number, product: Product) {
-        const orderItem = new OrderItem(this.orderItems.length+1, 1, product);
+        const orderItem = new OrderItem(this.orderItems.length+1, quantity, product);
         this.orderItems.push(orderItem);
     }
 
-    addCoupon (coupon: Coupon) {
+    addCoupon (coupon: Coupon, orderDate: Date = new Date()) {
+        if(coupon.expired(orderDate)){
+            throw new Error("Expired Coupon");
+        }
         this.coupon = coupon;
     }
 
@@ -33,7 +36,10 @@ export default class Order
         for (const orderItem of this.orderItems) {
             price += orderItem.price;
         }
-        return price;
+        if (this.coupon) {
+            price -= ((price * this.coupon.percentage) / 100);
+        }
+        return Math.max(0, price);
     }
 
     getFreight() {
