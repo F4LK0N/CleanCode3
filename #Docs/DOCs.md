@@ -4,12 +4,13 @@ Here you can find all the documentation about the online lessons and the project
 ## Filesystem Structure 
 The files and folders structure are organized this ways:  
 
-- **/Online Class/** <sub>(Material provided and lesson personal resume)</sub>
+- **/Course/** <sub>(Material provided and lesson personal resume)</sub>
   - **/Lesson 1/** 
     - **00 - Resume.md**
     - **01 - Material 1.pdf**
     - **02 - Material 2.pdf**
     - **0N - Material N.pdf**
+    - **Notes.md** <sub>(Personal notes)</sub>
   - **/Lesson 2/**
     - ...
   - **/Lesson N/**

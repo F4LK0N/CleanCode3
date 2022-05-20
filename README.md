@@ -11,18 +11,24 @@ https://branas.io
 ```  
 
 
-# Documentação
+## Documentação
 A documentação referente ao acompanhamento das aulas e ao desenvolvimento do projeto se encontra em:  
 ```
 /DOCs/
 ```
 
 
-# Aulas
+## Aulas
 Cada aula possui uma pasta separada onde serão salvos todos os materiais disponibilizados pelo curso assim como um resumo e notas pessoais do aluno.
 
 
-# Projeto
+## Projeto
 O desenvolvimento de um projeto é proposto ao longo do curso.  
 Na primeira aula é apresentado um cenario e proposta uma estrutura de projeto para atendender a esse cenario.
 A cada aula o cenario é incrementado com novas regras, e o projeto precisa evoluir de acordo.  
+
+
+
+# To Do
+- Translate this file to english e rename this to README.ptbr.md;
+- Create tag "Lesson 1";
