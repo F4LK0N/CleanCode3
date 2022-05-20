@@ -84,7 +84,26 @@
 
 # Refactoring
 
-... (resumo) ...
+## O que é refactoring
+- "Alteração feita na estrutura interna do software para torná-lo mais fácil de ser entendido e menos custoso de ser modificado, sem alterar o seu comportamento observável"
+  - Martin Fowler
+- Refactoring é um investimento, torna o código sustentável e competitivo;
+
+## Problemas da falta de refactoring 
+- Dia após dia a falta de refactoring consume o tempo da equipe;
+- Aumento da divida técnica;
+
+## Quando refatorar
+- Refatore com propósito, evite refatorar apenas por refatorar;
+- Fique atento as oportunidas;
+- Quando for adicionar uma nova funcionalidade;
+- Quando for corrigir um defeito;
+- Quando precisar entender uma parte do código;
+
+## Como evitar que a dívida técnica se acumule
+- É nossa responsabilidade garantir a qualidade do nosso trabalho;
+- Reconhecer e lidar no dia a dia com os code smells;
+- Refatorar;
 
 
 
