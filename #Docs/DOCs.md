@@ -28,6 +28,7 @@ The files and folders structure are organized this ways:
   - **Notes.md** <sub>(Personal notes)</sub>
   - **Setup.md** <sub>(Instructions to set up your pc to run the project)</sub>
 
+
 ## Project Graphic Representation
 The **Draw.io** application is used to generate the graphic project representation images like diagrams and UML.  
 This program can be used online at this address:  

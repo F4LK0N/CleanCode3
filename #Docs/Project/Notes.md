@@ -1,6 +1,16 @@
+Passos para desenvolvimento do projeto:
+- Entender o cenario;
+- Definir as entidades;
+- Definir o diagrama de classes;
+- Escrever os testes;
+- Escrever o código;
+
+
 UML Files
 - Find a program where a can save the source file. For future edit if necessary.
 - Remake the uml images with this program.
+
+
 
 
 Change of approach
