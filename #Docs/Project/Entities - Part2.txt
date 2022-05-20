@@ -1,7 +1,0 @@
-CPF
-Order
-OrderItem
-Product
-Coupon
-Body
-Freight
