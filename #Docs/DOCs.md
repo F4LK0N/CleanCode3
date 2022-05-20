@@ -1,5 +1,7 @@
 # DOCs
 Here you can find all the documentation about the online lessons and the project developed.  
+
+## Filesystem Structure 
 The files and folders structure are organized this ways:  
 
 - **/Online Class/** <sub>(Material provided and lesson personal resume)</sub>
@@ -25,3 +27,10 @@ The files and folders structure are organized this ways:
     - ...
   - **Notes.md** <sub>(Personal notes)</sub>
   - **Setup.md** <sub>(Instructions to set up your pc to run the project)</sub>
+
+## Project Graphic Representation
+The **Draw.io** application is used to generate the graphic project representation images like diagrams and UML.  
+This program can be used online at this address:  
+```https://app.diagrams.net/```  
+
+The files are saved with the **.drawio** extension.
