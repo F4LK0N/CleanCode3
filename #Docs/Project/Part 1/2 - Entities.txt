@@ -1,0 +1,16 @@
+pedido
+pedido_item
+product
+estoque
+estoque_item
+cupom
+pagamento
+
+
+Order
+OrderItem
+Product
+Inventory
+InventoryItem
+Coupon
+Payment
