@@ -34,4 +34,10 @@ docker exec -it web /bin/bash
 From inside the **php** shell container:
 ```  
 composer install
+composer dumpautoload
+
+composer self-update --update-keys
+composer diagnose -vvv
 ```
+
+

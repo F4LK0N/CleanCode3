@@ -10,14 +10,14 @@
         "mockery/mockery": "^1.5"
     },
     "autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        }
+        "classmap": [
+            "app"
+        ]
     },
     "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
+        "classmap": [
+            "tests"
+        ]
     },
     "scripts": {
         "server": "php -S localhost:8000 -t public public/index.php",
