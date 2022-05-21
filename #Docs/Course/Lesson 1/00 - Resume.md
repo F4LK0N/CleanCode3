@@ -4,7 +4,7 @@
 
 # Clean Code
 
-## Problemas no Código
+## Problemas no código
 - Codigo fonte bagunçado não sabe por onde começar;
 - Partes do codigo que só uma pessoa sabe mexer;
 - Medo de mexer numa coisa e estragar outra;
@@ -109,3 +109,65 @@
 
 # Code Smells e Técnicas de Refactoring
 
+## Nomes Estranhos
+Nomes que não refletem o seu conteudo ou ação, como x, j, temp.
+- Renomei as variavies para nomes que reflitam o seu conteúdo;
+- Renomei as funções e métodos para nomes que reflitam a ação que esta fazendo;
+- Evite a mistura de idiomas no código;
+
+## Variavies desnecessarias
+Variaveis que podiam ser retornadas diretamente;
+- Internalizar variável temporária;
+
+## Números mágicos]
+Um numero aleatorio no meio do código, que é dificil de determinar o que é.
+- Substituir números mágicos por constantes com nomes explicativos;
+
+## Comentarios
+Comentarios em cima de cada linha de codigo descrevendo o que ela esta fazendo.
+- Encapsular partes do código dentro de métodos e funções com nomes autoexplicativos; 
+
+## Código morto
+Codigo comentado dentro dos arquivos.
+- Remover o código;
+- Utilizar o sistema de versionamento;
+
+## Linhas em branco
+Linhas em branco entre cada, ou determinadas linhas do código aumentando a area necessaria de tela para mostrar o codigo.
+- Remover as linhas de código em branco;
+
+## Retornos estranhos
+Funções e métodos que retornam tipos diferentes de dados de acordo a situação.
+- Padronizar as saidas das funções e métodos;
+- Utilizar exceções para mostrar os erros;
+
+## Condições Confusas
+Condições que são dificeis de entender e que na sua estrutura de código se distanciam da margem.
+- Trazer código para perto da margem;
+- Consolidar fragmentos condicionais duplicados;
+- Condicionar expressão condicional;
+- Introduzir comando ternário;
+- Remover comando ternário;
+
+## Switch Statements
+- Substituir switch por polimorfismo;
+
+## Métodos Longos
+- Extrair método;
+- Internalizar método;
+
+## Longa lista de parametros
+- Preservar o objeto inteiro;
+- Introduzir objeto parâmetro;
+- Extrair classe;
+- Remover atribuições a parâmetros;
+
+## Falta de tratamento de exceções
+Exceções que atravessam muitas camadas sem ser tratadas.
+- Tratar exceções de forma adequeda;
+- Lançar exceções com informações;
+- Substituir tratamento de exceção por condição;
+- Relançar exceções adequadas ao domínio;
+
+## Classes grandes
+- Extrair classe;
