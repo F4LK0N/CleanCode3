@@ -9,10 +9,14 @@
 
 ## Docker
 ```
-docker-compose build  
-docker-compose up -d  
-docker exec -it web /bin/bash  
-docker exec -it php /bin/bash  
+docker-compose build
+docker-compose up -d
+docker-compose up -d -- build
+
+docker exec -it web /bin/sh
+docker exec -it php /bin/sh
+docker exec -it web /bin/bash
+docker exec -it php /bin/bash
 ```
 
 ## Hosts
