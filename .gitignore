@@ -3,5 +3,9 @@
 /node_modules/
 package-lock.json
 
+#Composer
+/vendor/
+composer.lock
+
 #IDE
 /.idea/workspace.xml
