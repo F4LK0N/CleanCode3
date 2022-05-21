@@ -5,7 +5,7 @@ package-lock.json
 
 #Composer
 /vendor/
-/composer.lock
+composer.lock
 
 #IDE
 /.idea/workspace.xml
