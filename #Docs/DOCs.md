@@ -19,7 +19,7 @@ The files and folders structure are organized this ways:
 
 - **/Project/** <sub>(Project cenarios, architecture docs and other related files)</sub>
   - **/Part 1/**
-    - **1 - Cenario.md** <sub>(The proposed cenario for that part of the project)</sub>
+    - **1 - Scenario.md** <sub>(The proposed scenario for that part of the project)</sub>
     - **2 - Entities.md** <sub>(The entities defined based on the current cenario)</sub>
     - **3 - UML.png** <sub>(The class structure defined based on the current cenario)</sub>
   - **/Part 2/**
