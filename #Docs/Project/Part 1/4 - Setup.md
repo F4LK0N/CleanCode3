@@ -12,7 +12,7 @@ Manage
 ```
 docker-compose build
 docker-compose up -d
-docker-compose up -d -- build
+docker-compose up -d --build
 ```
 
 Shell
@@ -42,5 +42,6 @@ composer diagnose -vvv
 
 ## PHP Unit
 ```
+composer test
 ./vendor/bin/phpunit ./tests/
 ```
