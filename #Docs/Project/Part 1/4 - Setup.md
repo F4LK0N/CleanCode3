@@ -40,4 +40,7 @@ composer self-update --update-keys
 composer diagnose -vvv
 ```
 
-
+## PHP Unit
+```
+./vendor/bin/phpunit ./tests/
+```
