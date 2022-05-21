@@ -28,7 +28,9 @@ Na primeira aula é apresentado um cenario e proposta uma estrutura de projeto p
 A cada aula o cenario é incrementado com novas regras, e o projeto precisa evoluir de acordo.  
 
 
+---
+
 
 # To Do
 - Translate this file to english e rename this to README.ptbr.md;
-- Create tag "Lesson 1";
+- Recreate the UML image from the project part 1;
