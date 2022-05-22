@@ -10,12 +10,6 @@ $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 $app->get('/', function (Request $request, Response $response, $args) {
-
-    $circle = new Circle();
-
-    var_dump(get_declared_classes());
-
-
     $response->getBody()->write("Index");
     return $response;
 });
