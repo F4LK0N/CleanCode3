@@ -26,7 +26,16 @@ Na primeira aula é apresentado um cenario e proposta uma estrutura de projeto p
 A cada aula o cenario é incrementado com novas regras, e o projeto precisa evoluir de acordo.  
 
 
+---
+
+
 ## Rodando o Projeto
+Requisitos:
+- Docker
+- Docker Compose
+- PHP Composer
+
+Comandos:
 ```
 docker-compose up -d --build
 docker exec -it php /bin/sh
@@ -40,4 +49,3 @@ composer test
 
 # To Do
 - Translate this file to english e rename this to README.ptbr.md;
-- Recreate the UML image from the project part 1;
