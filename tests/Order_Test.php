@@ -13,7 +13,6 @@ class Order_Test extends TestCase
         );
     }
 
-
     public function testInvalidCpf(): void
     {
         $this->expectException("Exception");
@@ -21,33 +20,14 @@ class Order_Test extends TestCase
         $order = new Order($cpf);
     }
 
-
-//    /**
-//     * @dataProvider providerValid
-//     */
-//    public function testValid(int $value, int $percentage, int $expectedValue): void
-//    {
-//        $coupon = new Coupon($percentage);
-//
-//        $this->assertEquals(
-//            $percentage,
-//            $coupon->getPercentage()
-//        );
-//
-//        $this->assertEquals(
-//            $expectedValue,
-//            $coupon->calculateFinalValue($value)
-//        );
-//    }
-//
-//    public function providerValid(): array
-//    {
-//        return [
-//            [10000, 1,   9900],
-//            [10000, 10,  9000],
-//            [10000, 25,  7500],
-//            [10000, 100,    0],
-//        ];
-//    }
+    public function testValidCpf(): void
+    {
+        $cpf = new CPF("111.444.777-35");
+        $order = new Order($cpf);
+        $this->assertInstanceOf(
+            CPF::class,
+            $order->getCpf()
+        );
+    }
 
 }

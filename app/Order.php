@@ -9,7 +9,14 @@ class Order
         if(!$cpf->isValid()){
             throw new Exception('CPF invalid!');
         }
+        $this->cpf = $cpf;
 
     }
+
+    public function getCpf (): CPF
+    {
+        return $this->cpf;
+    }
+
 
 }
