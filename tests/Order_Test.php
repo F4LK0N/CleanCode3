@@ -30,4 +30,18 @@ class Order_Test extends TestCase
         );
     }
 
+    public function testAddItem(): void
+    {
+        $cpf = new CPF("111.444.777-35");
+        $order = new Order($cpf);
+        $order->addItem(1, new Product(1, "Name 1", "Description 1", 10000));
+
+        return;
+
+        $this->assertEquals(
+            10000,
+            $order->getTotal()
+        );
+    }
+
 }
