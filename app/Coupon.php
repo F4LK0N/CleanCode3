@@ -24,9 +24,12 @@ class Coupon
             return $value;
         }
 
+        if($this->percentage === 100){
+            return 0;
+        }
 
-
-        return 0;
+        $discount = ceil(($value / 100.0) * $this->percentage);
+        return $value - $discount;
     }
 
 }
