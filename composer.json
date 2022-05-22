@@ -23,6 +23,7 @@
         "da": "composer dumpautoload",
         "server": "php -S localhost:8000 -t public public/index.php",
         "test": "./vendor/bin/phpunit ./tests/",
-        "tests": "./vendor/bin/phpunit ./tests/"
+        "tests": "./vendor/bin/phpunit ./tests/",
+        "cover": "./vendor/bin/phpunit --coverage-html ./tests_coverage/ ./tests/"
     }
 }
