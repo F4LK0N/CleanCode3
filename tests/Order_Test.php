@@ -43,4 +43,28 @@ class Order_Test extends TestCase
         );
     }
 
+    public function testGetTotalWithCouponBefore(): void
+    {
+        $cpf = new CPF("111.444.777-35");
+        $order = new Order($cpf);
+        $order->addCoupon(new Coupon(50));
+        $order->addItem(1, new Product(1, "Name 1", "Description 1", 10000));
+        $this->assertEquals(
+            5000,
+            $order->getTotal()
+        );
+    }
+
+    public function testGetTotalWithCouponAfter(): void
+    {
+        $cpf = new CPF("111.444.777-35");
+        $order = new Order($cpf);
+        $order->addItem(1, new Product(1, "Name 1", "Description 1", 10000));
+        $order->addCoupon(new Coupon(50));
+        $this->assertEquals(
+            5000,
+            $order->getTotal()
+        );
+    }
+
 }
