@@ -22,7 +22,7 @@ Cada aula possui uma pasta separada onde serão salvos todos os materiais dispon
 
 ### Projeto
 O desenvolvimento de um projeto é proposto ao longo do curso.  
-Na primeira aula é apresentado um cenario e proposta uma estrutura de projeto para atendender a esse cenario.
+Na primeira aula é apresentado um cenario e proposta uma estrutura de projeto para atender a esse cenario.  
 A cada aula o cenario é incrementado com novas regras, e o projeto precisa evoluir de acordo.  
 
 
@@ -33,7 +33,7 @@ A cada aula o cenario é incrementado com novas regras, e o projeto precisa evol
 Requisitos:
 - Docker
 - Docker Compose
-- PHP Composer
+- Composer
 
 Comandos:
 ```
