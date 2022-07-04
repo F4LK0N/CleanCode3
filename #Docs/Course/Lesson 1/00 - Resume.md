@@ -119,7 +119,7 @@ Nomes que não refletem o seu conteudo ou ação, como x, j, temp.
 Variaveis que podiam ser retornadas diretamente;
 - Internalizar variável temporária;
 
-## Números mágicos]
+## Números mágicos
 Um numero aleatorio no meio do código, que é dificil de determinar o que é.
 - Substituir números mágicos por constantes com nomes explicativos;
 
