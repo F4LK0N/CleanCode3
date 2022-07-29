@@ -4,7 +4,7 @@ services:
     container_name: web
     depends_on:
       - php
-    build: ./docker/nginx
+    build: ./.docker/nginx
     image: project/web
     networks:
       - backend
@@ -12,13 +12,13 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./docker/nginx/certs:/etc/nginx/certs
-      - ./docker/nginx/sites-available:/etc/nginx/sites-available
+      - ./.docker/nginx/certs:/etc/nginx/certs
+      - ./.docker/nginx/sites-available:/etc/nginx/sites-available
       - ./:/var/www/html
 
   php:
     container_name: php
-    build: ./docker/php
+    build: ./.docker/php
     image: project/php
     networks:
       - backend
@@ -27,12 +27,6 @@ services:
     environment:
       - ENVIRONMENT=dev
       - REGION=dev
-
-#  redis:
-#    container_name: redis
-#    image: redis:4.0-alpine
-#    networks:
-#      - backend
 
 networks:
   backend:
