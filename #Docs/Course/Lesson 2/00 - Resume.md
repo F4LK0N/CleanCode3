@@ -74,12 +74,3 @@ Objetos similares a stubs e spies, permitem que você diga exatamente o que quer
 #### Fake
 Objetos que tem implementações que simulam o funcionamento da instância real, que seria utilizada em produção.  
 (exemplo: uma base de dados em memória)
-
-
-
----
----
----
-
-
-
