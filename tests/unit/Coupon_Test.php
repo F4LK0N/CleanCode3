@@ -29,7 +29,6 @@ class Coupon_Test extends TestCase
             $coupon->getPercentage()
         );
     }
-
     public function providerInvalidPercentages(): array
     {
         return [
