@@ -8,29 +8,24 @@ class Coupon_Test extends TestCase
     {
         $this->assertInstanceOf(
             Coupon::class,
-            new Coupon(0)
+            new Coupon()
         );
     }
 
+
     /**
-     * @dataProvider providerInvalid
+     * @dataProvider providerInvalidPercentages
      */
-    public function testInvalid(int $value): void
+    public function testInvalidPercentage(int $percentage): void
     {
-        $coupon = new Coupon($value);
+        $coupon = new Coupon($percentage);
 
         $this->assertEquals(
             0,
             $coupon->getPercentage()
         );
-
-        $this->assertEquals(
-            10000,
-            $coupon->calculateFinalValue(10000)
-        );
     }
-
-    public function providerInvalid(): array
+    public function providerInvalidPercentages(): array
     {
         return [
             [-1],
@@ -39,10 +34,11 @@ class Coupon_Test extends TestCase
         ];
     }
 
+
     /**
-     * @dataProvider providerValid
+     * @dataProvider providerValidPercentages
      */
-    public function testValid(int $value, int $percentage, int $expectedValue): void
+    public function testValidPercentages(int $percentage): void
     {
         $coupon = new Coupon($percentage);
 
@@ -51,20 +47,56 @@ class Coupon_Test extends TestCase
             $coupon->getPercentage()
         );
 
-        $this->assertEquals(
-            $expectedValue,
-            $coupon->calculateFinalValue($value)
-        );
+//        $this->assertEquals(
+//            10000,
+//            $coupon->calculateFinalValue(10000)
+//        );
     }
 
-    public function providerValid(): array
+    public function providerValidPercentages(): array
     {
         return [
-            [10000, 1,   9900],
-            [10000, 10,  9000],
-            [10000, 25,  7500],
-            [10000, 100,    0],
+            [0],
+            [1],
+            [10],
+            [25],
+            [50],
+            [75],
+            [99],
+            [100],
         ];
     }
+
+    //VALID PERCENTAGE
+
+    //CALCULATE FINAL VALUE
+
+//    /**
+//     * @dataProvider providerValid
+//     */
+//    public function testValid(int $value, int $percentage, int $expectedValue): void
+//    {
+//        $coupon = new Coupon($percentage);
+//
+//        $this->assertEquals(
+//            $percentage,
+//            $coupon->getPercentage()
+//        );
+//
+//        $this->assertEquals(
+//            $expectedValue,
+//            $coupon->calculateFinalValue($value)
+//        );
+//    }
+//
+//    public function providerValid(): array
+//    {
+//        return [
+//            [10000, 1,   9900],
+//            [10000, 10,  9000],
+//            [10000, 25,  7500],
+//            [10000, 100,    0],
+//        ];
+//    }
 
 }
