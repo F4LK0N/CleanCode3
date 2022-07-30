@@ -19,16 +19,35 @@ class Body {
         $this->length = $length;
         $this->calculateVolume();
 
+        $this->weight = $weight;
+        $this->calculateDensity();
     }
 
     private function calculateVolume(): void
     {
+        if($this->width===0 || $this->height===0 && $this->length===0){
+            return;
+        }
         $this->volume = ($this->width * $this->height * $this->length) / 1000000.0;
     }
 
     public function getVolume(): float
     {
         return $this->volume;
+    }
+
+    private function calculateDensity(): void
+    {
+        if(!$this->weight || !$this->volume){
+            return;
+        }
+
+        $this->density = round(($this->weight / $this->volume));
+    }
+
+    public function getDesnsity(): float
+    {
+        return $this->density;
     }
 
 

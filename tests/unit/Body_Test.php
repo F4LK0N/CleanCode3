@@ -19,9 +19,9 @@ class Body_Test extends TestCase
     /**
      * @dataProvider provideVolume
      */
-    public function testVolume(float $weight, float $height, float $length, float $expectedValue): void
+    public function testVolume(float $width, float $height, float $length, float $expectedValue): void
     {
-        $body = new Body($weight, $height, $length);
+        $body = new Body($width, $height, $length);
 
         $this->assertEquals(
             $expectedValue,
@@ -38,6 +38,26 @@ class Body_Test extends TestCase
     }
 
 
+    /**
+     * @dataProvider providerDensity
+     */
+    public function testDesnsity(float $width, float $height, float $length, float $weight, float $expectedValue): void
+    {
+        $body = new Body($width, $height, $length, $weight);
+
+        $this->assertEquals(
+            $expectedValue,
+            $body->getDesnsity()
+        );
+    }
+    public function providerDensity(): array
+    {
+        return [
+            [20, 15, 10, 1, 333],
+            [100, 30, 10, 3, 100],
+            [200, 100, 50, 40, 40],
+        ];
+    }
 
 
 
