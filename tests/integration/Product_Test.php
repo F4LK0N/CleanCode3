@@ -1,6 +1,10 @@
 <?php
 
+namespace integration;
+
+use Body;
 use PHPUnit\Framework\TestCase;
+use Product;
 
 class Product_Test extends TestCase
 {
@@ -40,6 +44,7 @@ class Product_Test extends TestCase
         );
 
     }
+
     public function providerValid(): array
     {
         return [
