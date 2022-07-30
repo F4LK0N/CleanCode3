@@ -6,15 +6,17 @@ class Product
     private string $name        = "";
     private string $description = "";
     private int    $value       = 0;
+    private ?Body  $body        = null;
 
 
 
-    public function __construct(int $id=0, string $name='', string $description='', int $value=0)
+    public function __construct(int $id=0, string $name='', string $description='', int $value=0, ?Body $body = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
         $this->value = $value;
+        $this->body = $body;
     }
 
     public function getId(): int
@@ -35,6 +37,11 @@ class Product
     public function getValue(): int
     {
         return $this->value;
+    }
+
+    public function getBody(): ?Body
+    {
+        return $this->body;
     }
 
 }
