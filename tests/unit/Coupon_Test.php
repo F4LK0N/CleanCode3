@@ -1,6 +1,10 @@
 <?php
 
+namespace unit;
+
+use Coupon;
 use PHPUnit\Framework\TestCase;
+use TimeInSeconds;
 
 class Coupon_Test extends TestCase
 {
@@ -25,6 +29,7 @@ class Coupon_Test extends TestCase
             $coupon->getPercentage()
         );
     }
+
     public function providerInvalidPercentages(): array
     {
         return [
@@ -47,6 +52,7 @@ class Coupon_Test extends TestCase
             $coupon->getPercentage()
         );
     }
+
     public function providerValidPercentages(): array
     {
         return [
@@ -74,12 +80,13 @@ class Coupon_Test extends TestCase
             $coupon->isExpired($currentDate)
         );
     }
+
     public function providerExpireDate(): array
     {
         return [
             [0, 0, false],
             [0, TimeInSeconds::$DAY, false],
-            [time()+TimeInSeconds::$DAY*2, TimeInSeconds::$DAY, true],
+            [time() + TimeInSeconds::$DAY * 2, TimeInSeconds::$DAY, true],
         ];
     }
 
@@ -96,13 +103,14 @@ class Coupon_Test extends TestCase
             $coupon->calculateFinalValue($value)
         );
     }
+
     public function providerCalculateFinalValue(): array
     {
         return [
-            [1,   10000, 9900],
-            [10,  10000, 9000],
-            [25,  10000, 7500],
-            [100, 10000,    0],
+            [1, 10000, 9900],
+            [10, 10000, 9000],
+            [25, 10000, 7500],
+            [100, 10000, 0],
         ];
     }
 
