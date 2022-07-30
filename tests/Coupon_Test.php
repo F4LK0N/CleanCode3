@@ -63,6 +63,28 @@ class Coupon_Test extends TestCase
 
 
     /**
+     * @dataProvider providerExpireDate
+     */
+    public function testExpireDate(int $expireDate, bool $expectedResult): void
+    {
+        $coupon = new Coupon(1, $expireDate);
+
+        $this->assertEquals(
+            $expectedResult,
+            $coupon->isExpired()
+        );
+    }
+    public function providerExpireDate(): array
+    {
+        return [
+            [-TimeInSeconds::$DAY   , true],
+            [TimeInSeconds::$DAY    , false],
+            [TimeInSeconds::$DAY * 2, false],
+        ];
+    }
+
+
+    /**
      * @dataProvider providerCalculateFinalValue
      */
     public function testCalculateFinalValue(int $percentage, int $value, int $expectedValue): void
@@ -74,7 +96,6 @@ class Coupon_Test extends TestCase
             $coupon->calculateFinalValue($value)
         );
     }
-
     public function providerCalculateFinalValue(): array
     {
         return [

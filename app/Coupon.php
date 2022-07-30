@@ -3,22 +3,29 @@
 class Coupon
 {
     private int $percentage = 0;
-    private ?DateTime $expireDate = null;
+    private int $expireDate = 0;
 
-    public function __construct(int $percentage = 0, DateTime $expireDate = null)
+    public function __construct(int $percentage = 0, int $expireDate = 0)
     {
         if($percentage>=1 && $percentage<=100){
             $this->percentage = $percentage;
         }
 
-        if($expireDate){
-            $this->expireDate = $expireDate;
-        }
+        $this->expireDate = time() + $expireDate;
     }
 
     public function getPercentage(): int
     {
         return $this->percentage;
+    }
+
+    public function isExpired(): bool
+    {
+        if($this->expireDate===0){
+            return false;
+        }
+
+        return (time() > $this->expireDate);
     }
 
     public function calculateFinalValue(int $value): int
