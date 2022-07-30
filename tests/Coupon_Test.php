@@ -46,13 +46,7 @@ class Coupon_Test extends TestCase
             $percentage,
             $coupon->getPercentage()
         );
-
-//        $this->assertEquals(
-//            10000,
-//            $coupon->calculateFinalValue(10000)
-//        );
     }
-
     public function providerValidPercentages(): array
     {
         return [
@@ -67,36 +61,28 @@ class Coupon_Test extends TestCase
         ];
     }
 
-    //VALID PERCENTAGE
 
-    //CALCULATE FINAL VALUE
+    /**
+     * @dataProvider providerCalculateFinalValue
+     */
+    public function testCalculateFinalValue(int $percentage, int $value, int $expectedValue): void
+    {
+        $coupon = new Coupon($percentage);
 
-//    /**
-//     * @dataProvider providerValid
-//     */
-//    public function testValid(int $value, int $percentage, int $expectedValue): void
-//    {
-//        $coupon = new Coupon($percentage);
-//
-//        $this->assertEquals(
-//            $percentage,
-//            $coupon->getPercentage()
-//        );
-//
-//        $this->assertEquals(
-//            $expectedValue,
-//            $coupon->calculateFinalValue($value)
-//        );
-//    }
-//
-//    public function providerValid(): array
-//    {
-//        return [
-//            [10000, 1,   9900],
-//            [10000, 10,  9000],
-//            [10000, 25,  7500],
-//            [10000, 100,    0],
-//        ];
-//    }
+        $this->assertEquals(
+            $expectedValue,
+            $coupon->calculateFinalValue($value)
+        );
+    }
+
+    public function providerCalculateFinalValue(): array
+    {
+        return [
+            [1,   10000, 9900],
+            [10,  10000, 9000],
+            [25,  10000, 7500],
+            [100, 10000,    0],
+        ];
+    }
 
 }
