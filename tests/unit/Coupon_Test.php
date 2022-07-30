@@ -51,7 +51,6 @@ class Coupon_Test extends TestCase
             $coupon->getPercentage()
         );
     }
-
     public function providerValidPercentages(): array
     {
         return [
@@ -79,7 +78,6 @@ class Coupon_Test extends TestCase
             $coupon->isExpired($currentDate)
         );
     }
-
     public function providerExpireDate(): array
     {
         return [
@@ -102,7 +100,6 @@ class Coupon_Test extends TestCase
             $coupon->calculateFinalValue($value)
         );
     }
-
     public function providerCalculateFinalValue(): array
     {
         return [
