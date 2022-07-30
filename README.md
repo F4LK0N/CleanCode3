@@ -47,5 +47,8 @@ composer test
 ---
 
 
+
 # To Do
 - Translate this file to english e rename this to README.ptbr.md;
+- Install XDebug
+
