@@ -3,7 +3,7 @@
 class Coupon
 {
     private int $percentage = 0;
-    private int $expireDate = 0;
+    private int $expireDateInSeconds = 0;
 
     public function __construct(int $percentage = 0, int $expireDate = 0)
     {
@@ -12,7 +12,7 @@ class Coupon
         }
 
         if($expireDate>0){
-            $this->expireDate = time() + $expireDate;
+            $this->expireDateInSeconds = time() + $expireDate;
         }
     }
 
@@ -21,17 +21,17 @@ class Coupon
         return $this->percentage;
     }
 
-    public function isExpired(int $currentDate = 0): bool
+    public function isExpired(int $currentDateInSeconds = 0): bool
     {
-        if($this->expireDate===0){
+        if($this->expireDateInSeconds===0){
             return false;
         }
 
-        if($currentDate===0){
-            $currentDate = time();
+        if($currentDateInSeconds===0){
+            $currentDateInSeconds = time();
         }
 
-        return ($currentDate > $this->expireDate);
+        return ($currentDateInSeconds > $this->expireDateInSeconds);
     }
 
     public function calculateFinalValue(int $value): int

@@ -77,10 +77,12 @@ class Coupon_Test extends TestCase
     public function providerExpireDate(): array
     {
         return [
-            [0,      TimeInSeconds::$DAY * 1, false],
-            [time(), TimeInSeconds::$DAY * 1, false],
-            [time(), TimeInSeconds::$DAY * 2, false],
-            [time() - TimeInSeconds::$DAY * 2, TimeInSeconds::$DAY * 1, false],
+            [0, 0, false],
+            [0, TimeInSeconds::$DAY, false],
+            [time()+TimeInSeconds::$DAY*2, TimeInSeconds::$DAY, true],
+//            [time(),                           TimeInSeconds::$DAY * 1, false],
+//            [time(),                           TimeInSeconds::$DAY * 2, false],
+//            [time() - TimeInSeconds::$DAY * 2, TimeInSeconds::$DAY * 1, false],
         ];
     }
 
