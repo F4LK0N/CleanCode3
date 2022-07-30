@@ -24,6 +24,9 @@
         "server": "php -S localhost:8000 -t public public/index.php",
         "test": "./vendor/bin/phpunit ./tests/",
         "tests": "./vendor/bin/phpunit ./tests/",
-        "cover": "./vendor/bin/phpunit --coverage-html ./tests_coverage/ ./tests/"
+        "cover": "./vendor/bin/phpunit --coverage-html ./tests_coverage/ ./tests/",
+
+        "test_unit": "./vendor/bin/phpunit ./tests/unit/",
+        "test_integrationm": "./vendor/bin/phpunit ./tests/integration/"
     }
 }
