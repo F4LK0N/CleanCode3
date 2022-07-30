@@ -29,6 +29,9 @@ class Order
 
     public function addCoupon(Coupon $coupon): void
     {
+        if($coupon->isExpired()){
+            return;
+        }
         $this->coupon = $coupon;
         $this->calculateTotal();
     }
