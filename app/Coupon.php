@@ -11,7 +11,9 @@ class Coupon
             $this->percentage = $percentage;
         }
 
-        $this->expireDate = time() + $expireDate;
+        if($expireDate>0){
+            $this->expireDate = time() + $expireDate;
+        }
     }
 
     public function getPercentage(): int
@@ -19,13 +21,17 @@ class Coupon
         return $this->percentage;
     }
 
-    public function isExpired(): bool
+    public function isExpired(int $currentDate = 0): bool
     {
         if($this->expireDate===0){
             return false;
         }
 
-        return (time() > $this->expireDate);
+        if($currentDate===0){
+            $currentDate = time();
+        }
+
+        return ($currentDate > $this->expireDate);
     }
 
     public function calculateFinalValue(int $value): int

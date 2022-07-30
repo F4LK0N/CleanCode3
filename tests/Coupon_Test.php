@@ -65,21 +65,22 @@ class Coupon_Test extends TestCase
     /**
      * @dataProvider providerExpireDate
      */
-    public function testExpireDate(int $expireDate, bool $expectedResult): void
+    public function testExpireDate(int $currentDate, int $expireDate, bool $expectedResult): void
     {
         $coupon = new Coupon(1, $expireDate);
 
         $this->assertEquals(
             $expectedResult,
-            $coupon->isExpired()
+            $coupon->isExpired($currentDate)
         );
     }
     public function providerExpireDate(): array
     {
         return [
-            [-TimeInSeconds::$DAY   , true],
-            [TimeInSeconds::$DAY    , false],
-            [TimeInSeconds::$DAY * 2, false],
+            [0,      TimeInSeconds::$DAY * 1, false],
+            [time(), TimeInSeconds::$DAY * 1, false],
+            [time(), TimeInSeconds::$DAY * 2, false],
+            [time() - TimeInSeconds::$DAY * 2, TimeInSeconds::$DAY * 1, false],
         ];
     }
 
